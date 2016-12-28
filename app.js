@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var about =require('./routes/about');
+var contact =require('./routes/contact');
 
 var app = express();
 
@@ -26,7 +27,8 @@ app.use(express.static("node_modules/bootstrap/dist"));
 app.use(express.static("node_modules/jquery/dist"));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/about',about);
+app.use('/contact',contact);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
